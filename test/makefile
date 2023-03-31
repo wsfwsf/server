@@ -2,9 +2,9 @@ VPATH=..
 source=$(wildcard ../*.cc)
 obj=$(patsubst %.cc,%.o,$(source))
 
-all:main client
+all:main Client
 
-client:../client/client.cc
+Client:../client/client.cc
 	g++ $^ -o $@
 
 main:$(obj)
@@ -22,5 +22,5 @@ main:$(obj)
 
 .PHONY:clean 
 clean:
-	rm  ../*.o
+	rm  ../*.o ../*.d
 
